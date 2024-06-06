@@ -9,9 +9,15 @@ import SwiftUI
 
 @main
 struct ScreenshotAppApp: App {
+    @State private var service = ScreenCaptureService()
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentView(service: service)
+        }
+        
+        Settings {
+            SettingsView() 
         }
     }
 }

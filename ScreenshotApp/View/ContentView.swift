@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State private var service = ScreencaptureService()
+    let service: ScreenCaptureService
     
     var body: some View {
         VStack {
@@ -46,5 +46,5 @@ struct ContentView: View {
 }
 
 #Preview {
-    ContentView()
+    ContentView(service: ScreenCaptureService())
 }

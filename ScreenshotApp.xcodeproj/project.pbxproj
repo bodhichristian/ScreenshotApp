@@ -14,7 +14,11 @@
 		AA89495E2C1202D600221775 /* ScreenshotAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA89495D2C1202D600221775 /* ScreenshotAppTests.swift */; };
 		AA8949682C1202D600221775 /* ScreenshotAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA8949672C1202D600221775 /* ScreenshotAppUITests.swift */; };
 		AA89496A2C1202D600221775 /* ScreenshotAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA8949692C1202D600221775 /* ScreenshotAppUITestsLaunchTests.swift */; };
-		AA8949772C12060900221775 /* ScreencaptureService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA8949762C12060900221775 /* ScreencaptureService.swift */; };
+		AA8949772C12060900221775 /* ScreenCaptureService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA8949762C12060900221775 /* ScreenCaptureService.swift */; };
+		AA89497B2C12193B00221775 /* KeyboardShortcuts+Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA89497A2C12193B00221775 /* KeyboardShortcuts+Global.swift */; };
+		AABD7C5B2C1219F60048F795 /* KeyboardShortcuts in Frameworks */ = {isa = PBXBuildFile; productRef = AABD7C5A2C1219F60048F795 /* KeyboardShortcuts */; };
+		AABD7C612C121DAD0048F795 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AABD7C602C121DAD0048F795 /* SettingsView.swift */; };
+		AABD7C632C121DBA0048F795 /* KeyboardShortcutSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AABD7C622C121DBA0048F795 /* KeyboardShortcutSettingsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,7 +50,10 @@
 		AA8949632C1202D600221775 /* ScreenshotAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ScreenshotAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA8949672C1202D600221775 /* ScreenshotAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenshotAppUITests.swift; sourceTree = "<group>"; };
 		AA8949692C1202D600221775 /* ScreenshotAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenshotAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		AA8949762C12060900221775 /* ScreencaptureService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreencaptureService.swift; sourceTree = "<group>"; };
+		AA8949762C12060900221775 /* ScreenCaptureService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenCaptureService.swift; sourceTree = "<group>"; };
+		AA89497A2C12193B00221775 /* KeyboardShortcuts+Global.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "KeyboardShortcuts+Global.swift"; sourceTree = "<group>"; };
+		AABD7C602C121DAD0048F795 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		AABD7C622C121DBA0048F795 /* KeyboardShortcutSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardShortcutSettingsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +61,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AABD7C5B2C1219F60048F795 /* KeyboardShortcuts in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -98,8 +106,10 @@
 			isa = PBXGroup;
 			children = (
 				AA89494B2C1202D500221775 /* ScreenshotAppApp.swift */,
-				AA89494D2C1202D500221775 /* ContentView.swift */,
-				AA8949762C12060900221775 /* ScreencaptureService.swift */,
+				AA8949792C12191600221775 /* Model */,
+				AABD7C5D2C121D350048F795 /* Extensions */,
+				AABD7C5C2C121D1A0048F795 /* Services */,
+				AABD7C5E2C121D480048F795 /* View */,
 				AA89494F2C1202D600221775 /* Assets.xcassets */,
 				AA8949542C1202D600221775 /* ScreenshotApp.entitlements */,
 				AA8949512C1202D600221775 /* Preview Content */,
@@ -132,6 +142,47 @@
 			path = ScreenshotAppUITests;
 			sourceTree = "<group>";
 		};
+		AA8949792C12191600221775 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				AA89497A2C12193B00221775 /* KeyboardShortcuts+Global.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		AABD7C5C2C121D1A0048F795 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				AA8949762C12060900221775 /* ScreenCaptureService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		AABD7C5D2C121D350048F795 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		AABD7C5E2C121D480048F795 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				AA89494D2C1202D500221775 /* ContentView.swift */,
+				AABD7C5F2C121D860048F795 /* Settings */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		AABD7C5F2C121D860048F795 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				AABD7C602C121DAD0048F795 /* SettingsView.swift */,
+				AABD7C622C121DBA0048F795 /* KeyboardShortcutSettingsView.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -148,6 +199,9 @@
 			dependencies = (
 			);
 			name = ScreenshotApp;
+			packageProductDependencies = (
+				AABD7C5A2C1219F60048F795 /* KeyboardShortcuts */,
+			);
 			productName = ScreenshotApp;
 			productReference = AA8949482C1202D500221775 /* ScreenshotApp.app */;
 			productType = "com.apple.product-type.application";
@@ -220,6 +274,9 @@
 				Base,
 			);
 			mainGroup = AA89493F2C1202D500221775;
+			packageReferences = (
+				AA8949782C12190700221775 /* XCRemoteSwiftPackageReference "KeyboardShortcuts" */,
+			);
 			productRefGroup = AA8949492C1202D500221775 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -262,8 +319,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AABD7C632C121DBA0048F795 /* KeyboardShortcutSettingsView.swift in Sources */,
+				AABD7C612C121DAD0048F795 /* SettingsView.swift in Sources */,
 				AA89494E2C1202D500221775 /* ContentView.swift in Sources */,
-				AA8949772C12060900221775 /* ScreencaptureService.swift in Sources */,
+				AA89497B2C12193B00221775 /* KeyboardShortcuts+Global.swift in Sources */,
+				AA8949772C12060900221775 /* ScreenCaptureService.swift in Sources */,
 				AA89494C2C1202D500221775 /* ScreenshotAppApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -585,6 +645,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		AA8949782C12190700221775 /* XCRemoteSwiftPackageReference "KeyboardShortcuts" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/sindresorhus/KeyboardShortcuts.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		AABD7C5A2C1219F60048F795 /* KeyboardShortcuts */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AA8949782C12190700221775 /* XCRemoteSwiftPackageReference "KeyboardShortcuts" */;
+			productName = KeyboardShortcuts;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = AA8949402C1202D500221775 /* Project object */;
 }

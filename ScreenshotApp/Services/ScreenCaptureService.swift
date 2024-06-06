@@ -7,9 +7,10 @@
 
 import Foundation
 import SwiftUI
+import KeyboardShortcuts
 
 @Observable
-class ScreencaptureService {
+class ScreenCaptureService {
     
     enum ScreenshotType {
         case screen, window, area
@@ -29,6 +30,20 @@ class ScreencaptureService {
     
     init() {
         self.images = []
+         
+        KeyboardShortcuts.onKeyUp(for: .screenCapture) { [self] in
+            self.capture(.screen)
+        }
+        
+        KeyboardShortcuts.onKeyUp(for: .windowCapture) { [self] in
+            self.capture(.window)
+        }
+        
+        KeyboardShortcuts.onKeyUp(for: .areaCapture) { [self] in
+            self.capture(.area)
+        }
+        
+        
     }
     
     func capture(_ type: ScreenshotType) {
